@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="uz" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Savatcha</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Sizning savatchangiz</h1>
+<table>
+  <tr>
+    <th>Mahsulot</th>
+    <th>Miqdori</th>
+    <th>Narxi</th>
+    <th>Amallar</th>
+  </tr>
+  <tr th:each="item : ${cart.cartItems}">
+    <td th:text="${item.product.name}"></td>
+    <td th:text="${item.quantity}"></td>
+    <td th:text="${item.product.price * item.quantity}"></td>
+    <td>
+      <a th:href="@{/cart/remove(userId=${cart.user.id},productId=${item.product.id})}">O‘chirish</a>
+    </td>
+  </tr>
+</table>
+<a th:href="@{/orders/create(userId=${cart.user.id})}">Buyurtma berish</a>
+</body>
+</html>

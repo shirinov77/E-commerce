@@ -17,7 +17,7 @@ public class DatabaseConfig {
         dataSource.setDriverClassName("org.postgresql.Driver");
         dataSource.setUrl("jdbc:postgresql://localhost:5432/ecommerce_db");
         dataSource.setUsername("postgres");
-        dataSource.setPassword("your_password");
+        dataSource.setPassword("1111");
         return dataSource;
     }
 

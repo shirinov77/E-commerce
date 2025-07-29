@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="uz" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Mahsulot qo‘shish/tahrirlash</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<h1>Mahsulot qo‘shish/tahrirlash</h1>
+<form th:action="@{/admin/products}" th:object="${product}" method="post">
+  <input type="hidden" th:field="*{id}"/>
+  <label>Nomi: <input type="text" th:field="*{name}"/></label><br/>
+  <label>Tavsifi: <textarea th:field="*{description}"></textarea></label><br/>
+  <label>Narxi: <input type="number" step="0.01" th:field="*{price}"/></label><br/>
+  <label>Zahira: <input type="number" th:field="*{stock}"/></label><br/>
+  <button type="submit">Saqlash</button>
+</form>
+</body>
+</html>
