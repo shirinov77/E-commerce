@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uz" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce - Bosh Sahifa</title>
+  <!-- Tashqi CSS fayli, agar sizda /resources/css/style.css mavjud bo'lsa -->
+  <!-- <link rel="stylesheet" th:href="@{/resources/css/style.css}"/> -->
+</head>
+<body>
+<div class="container">
+  <!-- HomeController'dan kelgan xush kelibsiz xabarini ko'rsatish -->
+  <h1 th:text="${welcomeMessage}">Xush kelibsiz!</h1>
+  <p>Bizning e-commerce ilovamizga xush kelibsiz. Quyidagi havolalardan foydalanib,
+    ilovaning turli bo'limlariga o'tishingiz mumkin.</p>
+
+  <div class="nav-links">
+    <!-- Mahsulotlar ro'yxati sahifasiga o'tish -->
+    <a th:href="@{/products}">Mahsulotlarni ko‘rish</a>
+    <!-- Foydalanuvchi IDsi 1 bo'lgan savat sahifasiga o'tish -->
+    <a th:href="@{/cart(userId=1)}">Savatcha</a>
+    <!-- Foydalanuvchi IDsi 1 bo'lgan buyurtmalar sahifasiga o'tish -->
+    <a th:href="@{/orders(userId=1)}">Buyurtmalar</a>
+    <!-- Admin paneli mahsulotlarni boshqarish sahifasiga o'tish -->
+    <a th:href="@{/admin/products}">Admin paneli</a>
+    <!-- Chiqish (logout) sahifasiga o'tish -->
+    <a th:href="@{/logout}">Chiqish</a>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2024 E-commerce Ilovasi. Barcha huquqlar himoyalangan.</p>
+  </div>
+</div>
+</body>
+</html>
